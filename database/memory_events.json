@@ -1,0 +1,10 @@
+[
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-05T23:56:00.214131"
+    }
+]
