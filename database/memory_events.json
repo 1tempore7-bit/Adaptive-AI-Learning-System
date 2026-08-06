@@ -22,5 +22,21 @@
             "message": "Learning session started"
         },
         "timestamp": "2026-08-06T00:08:48.735037"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:22:59.103211"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:24:53.651234"
     }
 ]

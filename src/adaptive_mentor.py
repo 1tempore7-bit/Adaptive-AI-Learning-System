@@ -1,19 +1,13 @@
 class AdaptiveMentor:
-    def __init__(self, plm_store, learning_memory):
+    def __init__(self, plm_store, memory):
         self.plm_store = plm_store
-        self.learning_memory = learning_memory
+        self.memory = memory
 
-    def analyze_learner(self, learner_id):
-        profile = self.plm_store.get_learner(learner_id)
+    def generate_advice(self, analysis):
+        if analysis["status"] == "new":
+            return "Start learning by building basic concepts."
 
-        if profile:
-            return {
-                "learner_id": learner_id,
-                "profile": profile,
-                "status": "Analyzed"
-            }
+        if analysis["total_events"] < 5:
+            return "Continue practicing and collecting more learning data."
 
-        return {
-            "learner_id": learner_id,
-            "status": "No profile found"
-        }
+        return "Good progress. Keep improving your weak areas."
