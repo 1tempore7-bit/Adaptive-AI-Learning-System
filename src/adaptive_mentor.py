@@ -4,10 +4,25 @@ class AdaptiveMentor:
         self.memory = memory
 
     def generate_advice(self, analysis):
-        if analysis["status"] == "new":
-            return "Start learning by building basic concepts."
 
-        if analysis["total_events"] < 5:
-            return "Continue practicing and collecting more learning data."
+        weak_topics = analysis.get(
+            "weak_topics",
+            []
+        )
 
-        return "Good progress. Keep improving your weak areas."
+        if weak_topics:
+            topics = ", ".join(weak_topics)
+
+            return (
+                "You should review these weak topics: "
+                + topics
+            )
+
+        if analysis["status"] == "active":
+            return (
+                "Good progress. Try more advanced challenges."
+            )
+
+        return (
+            "Start learning and build your foundation."
+        )
