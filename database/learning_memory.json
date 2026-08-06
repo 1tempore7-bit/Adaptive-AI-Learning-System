@@ -1,0 +1,96 @@
+[
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 60,
+            "focus": 6,
+            "understanding": 7,
+            "mistakes": [
+                "Limits confusion",
+                "chain rule"
+            ],
+            "summary_written": true
+        }
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 60,
+            "focus": 7,
+            "understanding": 6,
+            "mistakes": [
+                "Limits confusion",
+                "chain rule mistake",
+                "derivative calculation error"
+            ],
+            "summary_written": true
+        }
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 30,
+            "focus": 5,
+            "understanding": 5,
+            "mistakes": [
+                "limits confusion"
+            ],
+            "summary_written": true
+        }
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 30,
+            "focus": 5,
+            "understanding": 5,
+            "mistakes": [
+                "limits confusion"
+            ],
+            "summary_written": true
+        }
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 30,
+            "focus": 5,
+            "understanding": 5,
+            "mistakes": [
+                "limits confusion"
+            ],
+            "summary_written": true
+        }
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 60,
+            "focus": 6,
+            "understanding": 7,
+            "mistakes": [
+                "chain rule mistake"
+            ],
+            "summary_written": true
+        },
+        "timestamp": "2026-08-06T20:55:36.088481"
+    }
+]

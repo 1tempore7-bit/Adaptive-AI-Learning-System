@@ -1,9 +1,10 @@
-from core.database_manager import DatabaseManager
+from .database_manager import DatabaseManager
+from datetime import datetime
 
 
 class LearningMemory:
 
-    def __init__(self, file_path="database/memory_events.json"):
+    def __init__(self, file_path="database/learning_memory.json"):
 
         self.file_path = file_path
 
@@ -23,34 +24,24 @@ class LearningMemory:
     ):
 
         event = {
-
             "learner_id": learner_id,
-
             "event_type": event_type,
-
-            "data": data
-
+            "data": data,
+            "timestamp": datetime.now().isoformat()
         }
-
 
         self.events.append(event)
 
         self.save()
-
-        return event
 
 
 
     def get_events(self, learner_id):
 
         return [
-
             event
-
             for event in self.events
-
             if event["learner_id"] == learner_id
-
         ]
 
 

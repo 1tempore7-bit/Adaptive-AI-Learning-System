@@ -1,11 +1,12 @@
 class AdaptiveMentor:
 
     def __init__(self, plm_store, memory):
+
         self.plm_store = plm_store
         self.memory = memory
 
 
-    def generate_advice(self, analysis, profile=None):
+    def generate_advice(self, analysis, profile=None, daily_state=None):
 
         weak_topics = analysis.get(
             "weak_topics",
@@ -22,6 +23,7 @@ class AdaptiveMentor:
 
 
         # Weak topics analysis
+
         if weak_topics:
 
             topics = ", ".join(weak_topics)
@@ -37,8 +39,83 @@ class AdaptiveMentor:
 
 
 
-        # Goals analysis
+        # Daily condition analysis
+
+        if daily_state:
+
+            condition = daily_state.get(
+                "condition",
+                "normal"
+            )
+
+            energy = daily_state.get(
+                "energy",
+                10
+            )
+
+            focus = daily_state.get(
+                "focus",
+                10
+            )
+
+            stress = daily_state.get(
+                "stress",
+                0
+            )
+
+            learning_mode = daily_state.get(
+                "learning_mode",
+                "normal"
+            )
+
+
+            if condition in ["tired", "sick"]:
+
+                advice.append(
+                    "Your energy is low today. Reduce the difficulty and focus on understanding and review instead of heavy problem solving."
+                )
+
+
+            if energy <= 3:
+
+                advice.append(
+                    "Because your energy level is very low, use a short focused session and avoid forcing long study periods."
+                )
+
+
+            if focus <= 4:
+
+                advice.append(
+                    "Your focus is limited today. Study in small blocks and remove distractions."
+                )
+
+
+            if stress >= 7:
+
+                advice.append(
+                    "Your stress level is high. Start with an easier task to build confidence before harder tasks."
+                )
+
+
+            if learning_mode == "light":
+
+                advice.append(
+                    "A light session is recommended today: review concepts, correct mistakes, and write summaries."
+                )
+
+
+            elif learning_mode == "deep":
+
+                advice.append(
+                    "You are ready for deeper learning. Try challenging problems and explain your reasoning."
+                )
+
+
+
+        # Profile analysis
+
         if profile:
+
 
             active_goals = profile.get_active_goals()
 
@@ -46,8 +123,11 @@ class AdaptiveMentor:
             if active_goals:
 
                 high_priority_goals = [
+
                     goal for goal in active_goals
+
                     if goal["priority"] == "high"
+
                 ]
 
 
@@ -69,8 +149,6 @@ class AdaptiveMentor:
                     )
 
 
-
-            # Learning behavior analysis
 
             behavior = profile.learning_behavior
 

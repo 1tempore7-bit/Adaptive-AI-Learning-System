@@ -4,7 +4,7 @@
         "level": "Beginner",
         "subjects": {
             "Mathematics": {
-                "progress": 50.0,
+                "progress": 16.67,
                 "weak_topics": [
                     "Derivatives"
                 ],
@@ -14,29 +14,7 @@
         },
         "active_subjects": [],
         "future_subjects": [],
-        "goals": [
-            {
-                "name": "Master Mathematics",
-                "type": "deep_learning",
-                "priority": "high",
-                "progress": 0,
-                "status": "active"
-            },
-            {
-                "name": "Learn Python",
-                "type": "skill",
-                "priority": "medium",
-                "progress": 0,
-                "status": "active"
-            },
-            {
-                "name": "Learn Chinese",
-                "type": "language",
-                "priority": "low",
-                "progress": 0,
-                "status": "active"
-            }
-        ],
+        "goals": [],
         "learning_behavior": {
             "consistency": 0,
             "focus": 0,
