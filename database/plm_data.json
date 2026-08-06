@@ -40,7 +40,16 @@
         "learning_behavior": {
             "consistency": 0,
             "focus": 0,
-            "deep_analysis": 0
+            "deep_analysis": 0,
+            "preferred_methods": [
+                "writing",
+                "deep_explanation"
+            ],
+            "summary_required": true,
+            "review_style": "active_recall",
+            "thinking_style": "analytical",
+            "learning_language": "Arabic",
+            "english_transition_level": 0
         }
     }
 }
