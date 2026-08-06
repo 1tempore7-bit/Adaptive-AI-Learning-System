@@ -1,4 +1,4 @@
-from core.database_manager import DatabaseManager
+from .database_manager import DatabaseManager
 
 
 class PLMStore:
@@ -29,7 +29,6 @@ class PLMStore:
         return self.learners.get(learner_id)
 
 
-
     def update_learner(self, learner_id, data):
 
         if learner_id in self.learners:
@@ -40,9 +39,7 @@ class PLMStore:
 
             return True
 
-
         return False
-
 
 
     def save_profile(self, profile):
@@ -52,7 +49,6 @@ class PLMStore:
         self.save()
 
         return True
-
 
 
     def delete_learner(self, learner_id):
@@ -65,9 +61,7 @@ class PLMStore:
 
             return True
 
-
         return False
-
 
 
     def save(self):
