@@ -2,11 +2,23 @@
     "001": {
         "learner_id": "001",
         "level": "Beginner",
-        "strong_topics": [],
-        "weak_topics": [
-            "Derivatives"
-        ],
-        "mastered_topics": [],
-        "progress": 50.0
+        "subjects": {
+            "Mathematics": {
+                "progress": 50.0,
+                "weak_topics": [
+                    "Derivatives"
+                ],
+                "strong_topics": [],
+                "mastered_topics": []
+            }
+        },
+        "active_subjects": [],
+        "future_subjects": [],
+        "goals": [],
+        "learning_behavior": {
+            "consistency": 0,
+            "focus": 0,
+            "deep_analysis": 0
+        }
     }
 }

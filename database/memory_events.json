@@ -518,5 +518,83 @@
             "method": "Visual explanation"
         },
         "timestamp": "2026-08-06T18:05:26.174642"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T18:26:07.091712"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T18:26:07.092517"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T18:30:20.005253"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T18:30:20.005931"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T18:32:41.052801"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T18:32:41.053524"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T18:35:06.211984"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T18:35:06.213092"
     }
 ]

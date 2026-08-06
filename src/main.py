@@ -19,41 +19,56 @@ def main():
 
     print("SYSTEMS LOADED")
 
+
     memory.add_event(
         "001",
         "concept_error",
         {
+            "subject": "Mathematics",
             "topic": "Derivatives",
             "problem": "Limits"
         }
     )
 
+
     memory.add_event(
         "001",
         "successful_explanation",
         {
+            "subject": "Mathematics",
             "topic": "Derivatives",
             "method": "Visual explanation"
         }
     )
 
+
     print("EVENTS SAVED")
 
-    analysis = engine.analyze_learner("001")
+
+    analysis = engine.analyze_learner(
+        "001",
+        "Mathematics"
+    )
+
 
     print("ANALYSIS:")
     print(analysis)
 
+
+    print("LEARNING PROFILE:")
+    print(profile.to_dict())
+
+
     store.save_profile(profile)
 
-    print("LEARNING PROFILE SAVED:")
+    print("PROFILE SAVED")
 
-    print(profile.to_dict())
 
     advice = mentor.generate_advice(analysis)
 
     print("ADVICE:")
     print(advice)
+
 
 
 if __name__ == "__main__":

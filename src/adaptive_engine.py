@@ -3,7 +3,8 @@ class AdaptiveEngine:
         self.memory = memory
         self.profile = profile
 
-    def analyze_learner(self, learner_id):
+    def analyze_learner(self, learner_id, subject="General"):
+
         events = self.memory.get_events(learner_id)
 
         errors = 0
@@ -11,6 +12,7 @@ class AdaptiveEngine:
         weak_topics = []
 
         for event in events:
+
             if event["event_type"] == "concept_error":
                 errors += 1
 
@@ -41,12 +43,24 @@ class AdaptiveEngine:
         else:
             progress_status = "needs_attention"
 
-        # تحديث ملف المتعلم
-        self.profile.update_progress(progress_rate)
-        self.profile.update_weak_topics(list(set(weak_topics)))
+
+        # تحديث ملف المتعلم حسب المادة
+        self.profile.add_subject(subject)
+
+        self.profile.update_progress(
+            subject,
+            progress_rate
+        )
+
+        self.profile.update_weak_topics(
+            subject,
+            list(set(weak_topics))
+        )
+
 
         analysis = {
             "learner_id": learner_id,
+            "subject": subject,
             "total_events": len(events),
             "errors": errors,
             "successes": successes,

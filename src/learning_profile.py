@@ -1,33 +1,89 @@
 class LearningProfile:
     def __init__(self, learner_id):
         self.learner_id = learner_id
+
         self.level = "Beginner"
 
-        self.strong_topics = []
-        self.weak_topics = []
-        self.mastered_topics = []
+        self.subjects = {}
 
-        self.progress = 0
+        self.active_subjects = []
 
-    def update_progress(self, progress):
-        self.progress = progress
+        self.future_subjects = []
 
-    def update_weak_topics(self, topics):
-        self.weak_topics = topics
+        self.goals = []
 
-    def update_strong_topics(self, topics):
-        self.strong_topics = topics
+        self.learning_behavior = {
+            "consistency": 0,
+            "focus": 0,
+            "deep_analysis": 0
+        }
 
-    def add_mastered_topic(self, topic):
-        if topic not in self.mastered_topics:
-            self.mastered_topics.append(topic)
+
+    def add_subject(self, subject):
+
+        if subject not in self.subjects:
+            self.subjects[subject] = {
+                "progress": 0,
+                "weak_topics": [],
+                "strong_topics": [],
+                "mastered_topics": []
+            }
+
+
+    def set_active_subject(self, subject):
+
+        self.add_subject(subject)
+
+        if subject not in self.active_subjects:
+            self.active_subjects.append(subject)
+
+
+    def add_future_subject(self, subject):
+
+        if subject not in self.future_subjects:
+            self.future_subjects.append(subject)
+
+
+    def update_progress(self, subject, progress):
+
+        self.add_subject(subject)
+
+        self.subjects[subject]["progress"] = progress
+
+
+    def update_weak_topics(self, subject, topics):
+
+        self.add_subject(subject)
+
+        self.subjects[subject]["weak_topics"] = topics
+
+
+    def update_strong_topics(self, subject, topics):
+
+        self.add_subject(subject)
+
+        self.subjects[subject]["strong_topics"] = topics
+
+
+    def add_goal(self, goal):
+
+        self.goals.append(goal)
+
+
+    def update_behavior(self, key, value):
+
+        if key in self.learning_behavior:
+            self.learning_behavior[key] = value
+
 
     def to_dict(self):
+
         return {
             "learner_id": self.learner_id,
             "level": self.level,
-            "strong_topics": self.strong_topics,
-            "weak_topics": self.weak_topics,
-            "mastered_topics": self.mastered_topics,
-            "progress": self.progress,
+            "subjects": self.subjects,
+            "active_subjects": self.active_subjects,
+            "future_subjects": self.future_subjects,
+            "goals": self.goals,
+            "learning_behavior": self.learning_behavior
         }
