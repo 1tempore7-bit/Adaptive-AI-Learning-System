@@ -1,27 +1,16 @@
-import json
-import os
+from database_manager import DatabaseManager
 from datetime import datetime
 
 
 class LearningMemory:
     def __init__(self, file_path="database/memory_events.json"):
         self.file_path = file_path
-        self.events = self.load_events()
+        self.db = DatabaseManager()
 
-    def load_events(self):
-        if os.path.exists(self.file_path):
-            with open(self.file_path, "r") as file:
-                return json.load(file)
-
-        return []
-
-    def save_events(self):
-        with open(self.file_path, "w") as file:
-            json.dump(
-                self.events,
-                file,
-                indent=4
-            )
+        self.events = self.db.load(
+            self.file_path,
+            []
+        )
 
     def add_event(self, learner_id, event_type, data):
         event = {
@@ -32,7 +21,7 @@ class LearningMemory:
         }
 
         self.events.append(event)
-        self.save_events()
+        self.save()
 
         return event
 
@@ -47,3 +36,9 @@ class LearningMemory:
 
     def count_events(self):
         return len(self.events)
+
+    def save(self):
+        self.db.save(
+            self.file_path,
+            self.events
+        )

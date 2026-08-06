@@ -14,5 +14,13 @@
             "message": "Learning session started"
         },
         "timestamp": "2026-08-06T00:06:31.893897"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:08:48.735037"
     }
 ]
