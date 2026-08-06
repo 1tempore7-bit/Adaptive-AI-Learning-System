@@ -262,5 +262,47 @@
             "summary_written": true
         },
         "timestamp": "2026-08-06T23:06:37.778978"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 60,
+            "focus": 6,
+            "understanding": 7,
+            "mistakes": [],
+            "summary_written": false
+        },
+        "timestamp": "2026-08-06T23:25:27.245367"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 60,
+            "focus": 9,
+            "understanding": 9,
+            "mistakes": [],
+            "summary_written": true
+        },
+        "timestamp": "2026-08-06T23:30:39.295357"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Chinese",
+            "topic": "Basic Vocabulary",
+            "duration": 60,
+            "focus": 8,
+            "understanding": 8,
+            "mistakes": [],
+            "summary_written": true
+        },
+        "timestamp": "2026-08-06T23:34:12.082249"
     }
 ]

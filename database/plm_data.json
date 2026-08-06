@@ -16,6 +16,20 @@
                 "weak_topics": [],
                 "strong_topics": [],
                 "mastered_topics": []
+            },
+            "Mathematics": {
+                "progress": 52.92,
+                "weak_topics": [
+                    "Derivatives"
+                ],
+                "strong_topics": [],
+                "mastered_topics": []
+            },
+            "Chinese": {
+                "progress": 100.0,
+                "weak_topics": [],
+                "strong_topics": [],
+                "mastered_topics": []
             }
         },
         "active_subjects": [],
