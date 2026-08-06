@@ -14,6 +14,7 @@ def main():
 
     profile = LearningProfile("001")
 
+
     # Learning goals
     profile.add_goal(
         "Master Mathematics",
@@ -88,7 +89,11 @@ def main():
     print(profile.get_active_goals())
 
 
-    advice = mentor.generate_advice(analysis)
+    advice = mentor.generate_advice(
+        analysis,
+        profile
+    )
+
 
     print("ADVICE:")
     print(advice)
