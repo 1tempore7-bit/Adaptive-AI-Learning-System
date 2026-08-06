@@ -1,6 +1,7 @@
 class AdaptiveEngine:
-    def __init__(self, memory):
+    def __init__(self, memory, profile):
         self.memory = memory
+        self.profile = profile
 
     def analyze_learner(self, learner_id):
         events = self.memory.get_events(learner_id)
@@ -40,7 +41,11 @@ class AdaptiveEngine:
         else:
             progress_status = "needs_attention"
 
-        return {
+        # تحديث ملف المتعلم
+        self.profile.update_progress(progress_rate)
+        self.profile.update_weak_topics(list(set(weak_topics)))
+
+        analysis = {
             "learner_id": learner_id,
             "total_events": len(events),
             "errors": errors,
@@ -50,3 +55,5 @@ class AdaptiveEngine:
             "weak_topics": list(set(weak_topics)),
             "status": "active" if events else "new"
         }
+
+        return analysis

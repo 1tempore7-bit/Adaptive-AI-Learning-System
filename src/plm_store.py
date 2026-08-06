@@ -12,7 +12,7 @@ class PLMStore:
         )
 
     def create_learner(self, learner_id, profile):
-        self.learners[learner_id] = profile
+        self.learners[learner_id] = profile.to_dict()
         self.save()
         return self.learners[learner_id]
 
@@ -26,6 +26,12 @@ class PLMStore:
             return True
 
         return False
+
+    def save_profile(self, profile):
+        self.learners[profile.learner_id] = profile.to_dict()
+        self.save()
+
+        return True
 
     def delete_learner(self, learner_id):
         if learner_id in self.learners:

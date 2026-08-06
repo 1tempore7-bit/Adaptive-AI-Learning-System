@@ -1,5 +1,6 @@
 from plm_store import PLMStore
 from learning_memory import LearningMemory
+from learning_profile import LearningProfile
 from adaptive_engine import AdaptiveEngine
 from adaptive_mentor import AdaptiveMentor
 
@@ -11,7 +12,9 @@ def main():
     store = PLMStore()
     memory = LearningMemory()
 
-    engine = AdaptiveEngine(memory)
+    profile = LearningProfile("001")
+
+    engine = AdaptiveEngine(memory, profile)
     mentor = AdaptiveMentor(store, memory)
 
     print("SYSTEMS LOADED")
@@ -40,6 +43,12 @@ def main():
 
     print("ANALYSIS:")
     print(analysis)
+
+    store.save_profile(profile)
+
+    print("LEARNING PROFILE SAVED:")
+
+    print(profile.to_dict())
 
     advice = mentor.generate_advice(analysis)
 

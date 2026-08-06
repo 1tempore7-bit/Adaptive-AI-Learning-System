@@ -1,10 +1,12 @@
 {
     "001": {
-        "name": "Learner",
+        "learner_id": "001",
         "level": "Beginner",
-        "goals": [
-            "AI",
-            "Mathematics"
-        ]
+        "strong_topics": [],
+        "weak_topics": [
+            "Derivatives"
+        ],
+        "mastered_topics": [],
+        "progress": 50.0
     }
 }
