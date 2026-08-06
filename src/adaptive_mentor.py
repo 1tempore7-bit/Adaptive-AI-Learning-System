@@ -10,19 +10,31 @@ class AdaptiveMentor:
             []
         )
 
+        progress_status = analysis.get(
+            "progress_status",
+            "needs_attention"
+        )
+
         if weak_topics:
             topics = ", ".join(weak_topics)
 
             return (
-                "You should review these weak topics: "
-                + topics
+                f"Review these weak topics: {topics}. "
+                "Keep practicing them."
             )
 
-        if analysis["status"] == "active":
+        if progress_status == "improving":
             return (
-                "Good progress. Try more advanced challenges."
+                "Your progress is improving. "
+                "Try more advanced challenges."
+            )
+
+        elif progress_status == "stable":
+            return (
+                "Your progress is stable. "
+                "More practice will help you improve."
             )
 
         return (
-            "Start learning and build your foundation."
+            "Focus on building your foundation."
         )

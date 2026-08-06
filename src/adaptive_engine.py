@@ -21,26 +21,32 @@ class AdaptiveEngine:
             elif event["event_type"] == "successful_explanation":
                 successes += 1
 
-        status = "new"
+        total_attempts = errors + successes
 
-        if len(events) > 0:
-            status = "active"
+        progress_rate = 0
 
-        if errors > successes:
-            recommendation = "Focus on reviewing weak concepts."
+        if total_attempts > 0:
+            progress_rate = round(
+                (successes / total_attempts) * 100,
+                2
+            )
 
-        elif successes > errors:
-            recommendation = "Good progress. Increase difficulty."
+        if progress_rate >= 70:
+            progress_status = "improving"
+
+        elif progress_rate >= 40:
+            progress_status = "stable"
 
         else:
-            recommendation = "Continue learning and practice."
+            progress_status = "needs_attention"
 
         return {
             "learner_id": learner_id,
             "total_events": len(events),
             "errors": errors,
             "successes": successes,
+            "progress_rate": progress_rate,
+            "progress_status": progress_status,
             "weak_topics": list(set(weak_topics)),
-            "status": status,
-            "recommendation": recommendation
+            "status": "active" if events else "new"
         }

@@ -356,5 +356,77 @@
             "method": "Visual explanation"
         },
         "timestamp": "2026-08-06T00:44:28.683367"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T00:48:16.489153"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:48:16.489691"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T00:49:36.351717"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:49:36.352902"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T00:50:26.387336"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:50:26.388023"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T00:50:35.272348"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:50:35.272985"
     }
 ]
