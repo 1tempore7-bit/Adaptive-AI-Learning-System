@@ -38,5 +38,179 @@
             "message": "Learning session started"
         },
         "timestamp": "2026-08-06T00:24:53.651234"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:28:21.874828"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:30:57.024434"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Weak understanding of limits"
+        },
+        "timestamp": "2026-08-06T00:30:57.024685"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:30:57.024880"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:31:02.559543"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Weak understanding of limits"
+        },
+        "timestamp": "2026-08-06T00:31:02.559774"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:31:02.559982"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:31:22.226470"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Weak understanding of limits"
+        },
+        "timestamp": "2026-08-06T00:31:22.226743"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:31:22.227051"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:32:05.065595"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Weak understanding of limits"
+        },
+        "timestamp": "2026-08-06T00:32:05.065920"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:32:05.066182"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "system_start",
+        "data": {
+            "message": "Learning session started"
+        },
+        "timestamp": "2026-08-06T00:33:19.516077"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Weak understanding of limits"
+        },
+        "timestamp": "2026-08-06T00:33:19.516400"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:33:19.516734"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T00:34:26.768829"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:34:26.769307"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T00:37:22.889681"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T00:37:22.890176"
     }
 ]

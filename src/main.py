@@ -6,61 +6,45 @@ from adaptive_mentor import AdaptiveMentor
 
 def main():
 
-    # Initialize systems
+    print("MAIN STARTED")
+
     store = PLMStore()
     memory = LearningMemory()
 
     engine = AdaptiveEngine(memory)
     mentor = AdaptiveMentor(store, memory)
 
-    # Create learner
-    learner = {
-        "name": "Learner",
-        "level": "Beginner",
-        "goals": [
-            "AI",
-            "Mathematics"
-        ]
-    }
+    print("SYSTEMS LOADED")
 
-    store.create_learner(
-        "001",
-        learner
-    )
-
-    # Add learning event
     memory.add_event(
         "001",
-        "system_start",
+        "concept_error",
         {
-            "message": "Learning session started"
+            "topic": "Derivatives",
+            "problem": "Limits"
         }
     )
 
-    # Analyze learner
-    analysis = engine.analyze_learner(
-        "001"
+    memory.add_event(
+        "001",
+        "successful_explanation",
+        {
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        }
     )
 
-    # Mentor response
-    advice = mentor.generate_advice(
-        analysis
-    )
+    print("EVENTS SAVED")
 
-    print("\nLearning Memory:")
-    print(
-        memory.get_events("001")
-    )
+    analysis = engine.analyze_learner("001")
 
-    print("\nAdaptive Analysis:")
-    print(
-        analysis
-    )
+    print("ANALYSIS:")
+    print(analysis)
 
-    print("\nMentor Advice:")
-    print(
-        advice
-    )
+    advice = mentor.generate_advice(analysis)
+
+    print("ADVICE:")
+    print(advice)
 
 
 if __name__ == "__main__":
