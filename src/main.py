@@ -16,7 +16,6 @@ def main():
 
     print("MAIN STARTED")
 
-
     db = DatabaseManager()
 
     plm_store = PLMStore()
@@ -25,48 +24,37 @@ def main():
 
     profile = LearningProfile("001")
 
-
     tracker = LearningTracker(memory)
 
     session_input = SessionInput()
 
     daily_state = DailyState()
 
-
     engine = AdaptiveEngine(
         memory,
         profile
     )
-
 
     mentor = AdaptiveMentor(
         plm_store,
         memory
     )
 
-
     print("SYSTEMS LOADED")
-
 
     # Daily condition
 
     state = daily_state.collect_state()
 
-
     print("\nDAILY STATE:")
     print(state)
-
-
 
     # Learning session
 
     session = session_input.collect_session()
 
-
     print("\nLEARNING SESSION SAVED:")
     print(session)
-
-
 
     # Save learning event
 
@@ -76,8 +64,6 @@ def main():
         session
     )
 
-
-
     # Analyze learner
 
     analysis = engine.analyze_learner(
@@ -85,20 +71,18 @@ def main():
         session["subject"]
     )
 
+    # Save updated learner profile
+    plm_store.save_profile(profile)
 
     print("\nANALYSIS:")
     print(analysis)
-
-
 
     # Profile
 
     print("\nLEARNING PROFILE:")
     print(profile.to_dict())
 
-
-
-    # Adaptive advice using daily state
+    # Adaptive advice
 
     advice = mentor.generate_advice(
         analysis,
@@ -106,10 +90,8 @@ def main():
         state
     )
 
-
     print("\nADVICE:")
     print(advice)
-
 
 
 if __name__ == "__main__":
