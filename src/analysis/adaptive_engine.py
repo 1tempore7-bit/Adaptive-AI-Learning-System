@@ -12,7 +12,35 @@ class AdaptiveEngine:
 
     def analyze_learner(self, learner_id, subject="General"):
 
-        events = self.memory.get_events(learner_id)
+        all_events = self.memory.get_events(
+            learner_id
+        )
+
+
+        # فلترة الجلسات حسب المادة الحالية فقط
+        events = []
+
+
+        for event in all_events:
+
+            data = event.get(
+                "data",
+                {}
+            )
+
+
+            event_subject = data.get(
+                "subject"
+            )
+
+
+            if event_subject == subject:
+
+                events.append(
+                    event
+                )
+
+
 
         errors = 0
         successes = 0
@@ -23,6 +51,7 @@ class AdaptiveEngine:
         total_weight = 0
 
         now = datetime.now()
+
 
 
         for event in events:
@@ -38,6 +67,7 @@ class AdaptiveEngine:
 
 
             weight = 1
+
 
             timestamp = event.get(
                 "timestamp"
@@ -57,7 +87,6 @@ class AdaptiveEngine:
                     ).days
 
 
-                    # الأحداث الحديثة لها وزن أكبر
                     weight = max(
                         0.2,
                         1 - (days_old * 0.05)
@@ -72,6 +101,7 @@ class AdaptiveEngine:
 
             if event_type == "learning_session":
 
+
                 total_sessions += 1
 
 
@@ -79,6 +109,7 @@ class AdaptiveEngine:
                     "understanding",
                     0
                 )
+
 
                 focus = data.get(
                     "focus",
@@ -109,7 +140,6 @@ class AdaptiveEngine:
                         )
 
 
-                    # جلسة بها أخطاء
                     score = (
                         understanding * 5
                         +
@@ -121,8 +151,6 @@ class AdaptiveEngine:
 
                     successes += 1
 
-
-                    # جلسة ناجحة
                     score = 100
 
 
@@ -130,6 +158,7 @@ class AdaptiveEngine:
                 weighted_progress += (
                     score * weight
                 )
+
 
                 total_weight += weight
 
@@ -160,6 +189,7 @@ class AdaptiveEngine:
 
 
 
+
         progress_rate = 0
 
 
@@ -181,10 +211,12 @@ class AdaptiveEngine:
                 10
             )
 
+
             focus = self.daily_state.get(
                 "focus",
                 10
             )
+
 
             stress = self.daily_state.get(
                 "stress",
@@ -192,7 +224,6 @@ class AdaptiveEngine:
             )
 
 
-            # طاقة منخفضة
 
             if energy <= 3:
 
@@ -200,23 +231,17 @@ class AdaptiveEngine:
 
 
 
-            # تركيز منخفض
-
             if focus <= 4:
 
                 progress_rate -= 3
 
 
 
-            # ضغط مرتفع
-
             if stress >= 8:
 
                 progress_rate -= 5
 
 
-
-            # حالة ممتازة
 
             if (
                 energy >= 8

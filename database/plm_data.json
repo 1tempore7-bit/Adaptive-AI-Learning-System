@@ -3,11 +3,17 @@
         "learner_id": "001",
         "level": "Beginner",
         "subjects": {
-            "mathmastics": {
-                "progress": 43.58,
+            "Physics": {
+                "progress": 85.33,
                 "weak_topics": [
-                    "Derivatives"
+                    "Electricity"
                 ],
+                "strong_topics": [],
+                "mastered_topics": []
+            },
+            "Chemistry": {
+                "progress": 100.0,
+                "weak_topics": [],
                 "strong_topics": [],
                 "mastered_topics": []
             }

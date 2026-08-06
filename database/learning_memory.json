@@ -190,5 +190,77 @@
             "summary_written": false
         },
         "timestamp": "2026-08-06T21:55:02.653584"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Physics",
+            "topic": "Electricity",
+            "duration": 60,
+            "focus": 8,
+            "understanding": 8,
+            "mistakes": [
+                "separate with commas"
+            ],
+            "summary_written": true
+        },
+        "timestamp": "2026-08-06T22:45:53.786695"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Physics",
+            "topic": "Electricity",
+            "duration": 60,
+            "focus": 8,
+            "understanding": 8,
+            "mistakes": [],
+            "summary_written": true
+        },
+        "timestamp": "2026-08-06T22:53:29.876753"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Chemistry",
+            "topic": "Atoms",
+            "duration": 60,
+            "focus": 8,
+            "understanding": 8,
+            "mistakes": [],
+            "summary_written": true
+        },
+        "timestamp": "2026-08-06T22:57:25.737974"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Chemistry",
+            "topic": "Atoms",
+            "duration": 60,
+            "focus": 8,
+            "understanding": 8,
+            "mistakes": [],
+            "summary_written": true
+        },
+        "timestamp": "2026-08-06T23:03:42.621035"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Physics",
+            "topic": "Electricity",
+            "duration": 60,
+            "focus": 9,
+            "understanding": 9,
+            "mistakes": [],
+            "summary_written": true
+        },
+        "timestamp": "2026-08-06T23:06:37.778978"
     }
 ]

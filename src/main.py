@@ -12,77 +12,168 @@ from src.tracking.learning_tracker import LearningTracker
 from src.session_input import SessionInput
 
 
+
+def load_profile(plm_store, learner_id):
+
+    saved_profile = plm_store.get_learner(
+        learner_id
+    )
+
+    profile = LearningProfile(
+        learner_id
+    )
+
+
+    if saved_profile:
+
+        profile.level = saved_profile.get(
+            "level",
+            "Beginner"
+        )
+
+
+        profile.subjects = saved_profile.get(
+            "subjects",
+            {}
+        )
+
+
+        profile.active_subjects = saved_profile.get(
+            "active_subjects",
+            []
+        )
+
+
+        profile.future_subjects = saved_profile.get(
+            "future_subjects",
+            []
+        )
+
+
+        profile.goals = saved_profile.get(
+            "goals",
+            []
+        )
+
+
+        profile.learning_behavior = saved_profile.get(
+            "learning_behavior",
+            profile.learning_behavior
+        )
+
+
+    return profile
+
+
+
 def main():
 
     print("MAIN STARTED")
 
+
     db = DatabaseManager()
+
 
     plm_store = PLMStore()
 
+
     memory = LearningMemory()
 
-    profile = LearningProfile("001")
 
-    tracker = LearningTracker(memory)
+    learner_id = "001"
+
+
+    profile = load_profile(
+        plm_store,
+        learner_id
+    )
+
+
+    tracker = LearningTracker(
+        memory
+    )
+
 
     session_input = SessionInput()
 
+
     daily_state = DailyState()
+
+
 
     engine = AdaptiveEngine(
         memory,
         profile
     )
 
+
     mentor = AdaptiveMentor(
         plm_store,
         memory
     )
 
+
     print("SYSTEMS LOADED")
+
+
 
     # Daily condition
 
     state = daily_state.collect_state()
 
+
     print("\nDAILY STATE:")
     print(state)
+
+
 
     # Learning session
 
     session = session_input.collect_session()
 
+
     print("\nLEARNING SESSION SAVED:")
     print(session)
 
-    # Save learning event
+
+
+    # Save event
 
     memory.add_event(
-        "001",
+        learner_id,
         "learning_session",
         session
     )
 
-    # Analyze learner
+
+
+    # Analyze
 
     analysis = engine.analyze_learner(
-        "001",
+        learner_id,
         session["subject"]
     )
 
-    # Save updated learner profile
-    plm_store.save_profile(profile)
 
     print("\nANALYSIS:")
     print(analysis)
 
-    # Profile
+
+
+    # Save profile without deleting old subjects
+
+    plm_store.save_profile(
+        profile
+    )
+
+
 
     print("\nLEARNING PROFILE:")
     print(profile.to_dict())
 
-    # Adaptive advice
+
+
+    # Advice
 
     advice = mentor.generate_advice(
         analysis,
@@ -90,9 +181,13 @@ def main():
         state
     )
 
+
     print("\nADVICE:")
     print(advice)
 
 
+
+
 if __name__ == "__main__":
+
     main()
