@@ -596,5 +596,25 @@
             "method": "Visual explanation"
         },
         "timestamp": "2026-08-06T18:35:06.213092"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "concept_error",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "problem": "Limits"
+        },
+        "timestamp": "2026-08-06T18:52:01.840886"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "successful_explanation",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "method": "Visual explanation"
+        },
+        "timestamp": "2026-08-06T18:52:01.841593"
     }
 ]

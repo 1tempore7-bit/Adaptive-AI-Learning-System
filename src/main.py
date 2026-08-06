@@ -14,6 +14,26 @@ def main():
 
     profile = LearningProfile("001")
 
+    # Learning goals
+    profile.add_goal(
+        "Master Mathematics",
+        "deep_learning",
+        "high"
+    )
+
+    profile.add_goal(
+        "Learn Python",
+        "skill",
+        "medium"
+    )
+
+    profile.add_goal(
+        "Learn Chinese",
+        "language",
+        "low"
+    )
+
+
     engine = AdaptiveEngine(memory, profile)
     mentor = AdaptiveMentor(store, memory)
 
@@ -62,6 +82,10 @@ def main():
     store.save_profile(profile)
 
     print("PROFILE SAVED")
+
+
+    print("ACTIVE GOALS:")
+    print(profile.get_active_goals())
 
 
     advice = mentor.generate_advice(analysis)

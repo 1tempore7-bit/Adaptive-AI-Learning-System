@@ -44,11 +44,13 @@ class LearningProfile:
             self.future_subjects.append(subject)
 
 
+
     def update_progress(self, subject, progress):
 
         self.add_subject(subject)
 
         self.subjects[subject]["progress"] = progress
+
 
 
     def update_weak_topics(self, subject, topics):
@@ -58,22 +60,71 @@ class LearningProfile:
         self.subjects[subject]["weak_topics"] = topics
 
 
+
     def update_strong_topics(self, subject, topics):
 
-        self.add_subject(subject)
+        self.add_subject(subject,)
 
         self.subjects[subject]["strong_topics"] = topics
 
 
-    def add_goal(self, goal):
+
+    # -------- Goals System --------
+
+    def add_goal(
+        self,
+        name,
+        goal_type="general",
+        priority="medium"
+    ):
+
+        goal = {
+            "name": name,
+            "type": goal_type,
+            "priority": priority,
+            "progress": 0,
+            "status": "active"
+        }
 
         self.goals.append(goal)
 
+
+
+    def update_goal_progress(self, name, progress):
+
+        for goal in self.goals:
+
+            if goal["name"] == name:
+                goal["progress"] = progress
+
+
+
+    def complete_goal(self, name):
+
+        for goal in self.goals:
+
+            if goal["name"] == name:
+                goal["status"] = "completed"
+                goal["progress"] = 100
+
+
+
+    def get_active_goals(self):
+
+        return [
+            goal for goal in self.goals
+            if goal["status"] == "active"
+        ]
+
+
+
+    # -------- Learning Behavior --------
 
     def update_behavior(self, key, value):
 
         if key in self.learning_behavior:
             self.learning_behavior[key] = value
+
 
 
     def to_dict(self):
