@@ -4,6 +4,7 @@ from learning_profile import LearningProfile
 from adaptive_engine import AdaptiveEngine
 from adaptive_mentor import AdaptiveMentor
 from learning_tracker import LearningTracker
+from session_input import SessionInput
 
 
 
@@ -37,59 +38,62 @@ def main():
     )
 
 
+    session_input = SessionInput()
+
+
     print("SYSTEMS LOADED")
 
 
 
-    # تسجيل جلسة تعلم تجريبية
+    # إدخال جلسة تعلم من المستخدم
 
-    session = tracker.record_session(
+    session = session_input.collect_session()
+
+
+
+    tracker.record_session(
 
         "001",
 
-        "Mathematics",
+        session["subject"],
 
-        "Derivatives",
+        session["topic"],
 
-        duration=90,
+        session["duration"],
 
-        focus=8,
+        session["focus"],
 
-        understanding=7,
+        session["understanding"],
 
-        mistakes=[
-            "Limits confusion"
-        ],
+        session["mistakes"],
 
-        summary_written=True
+        session["summary_written"]
 
     )
 
 
-    print("LEARNING SESSION SAVED:")
+    print("\nLEARNING SESSION SAVED:")
 
     print(session)
 
 
 
-    # تحليل المتعلم
-
     analysis = engine.analyze_learner(
 
         "001",
 
-        "Mathematics"
+        session["subject"]
 
     )
 
 
-    print("ANALYSIS:")
+    print("\nANALYSIS:")
 
     print(analysis)
 
 
 
-    print("LEARNING PROFILE:")
+    print("\nLEARNING PROFILE:")
 
     print(profile.to_dict())
 
@@ -104,7 +108,7 @@ def main():
     )
 
 
-    print("ADVICE:")
+    print("\nADVICE:")
 
     print(advice)
 

@@ -730,5 +730,42 @@
             "date": "2026-08-06 19:17:12.192861"
         },
         "timestamp": "2026-08-06T19:17:12.192872"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Subject: Mathematics",
+            "topic": "Topic: Derivatives",
+            "duration": 60,
+            "focus": 5,
+            "understanding": 6,
+            "mistakes": [
+                "Limits confusion",
+                "chain rule mistake",
+                "calculation error"
+            ],
+            "summary_written": false,
+            "date": "2026-08-06 19:25:20.105476"
+        },
+        "timestamp": "2026-08-06T19:25:20.105502"
+    },
+    {
+        "learner_id": "001",
+        "event_type": "learning_session",
+        "data": {
+            "subject": "Mathematics",
+            "topic": "Derivatives",
+            "duration": 60,
+            "focus": 7,
+            "understanding": 7,
+            "mistakes": [
+                "Limits confusion",
+                "chain rule confusion"
+            ],
+            "summary_written": true,
+            "date": "2026-08-06 19:28:14.771707"
+        },
+        "timestamp": "2026-08-06T19:28:14.771747"
     }
 ]
